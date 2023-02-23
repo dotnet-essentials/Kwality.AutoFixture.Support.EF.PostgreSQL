@@ -48,9 +48,8 @@ public sealed class PostgreSqlWithOptionsCustomizationTests
 {
     private const string connectionString = "User ID=postgres;Password=PostgreSQL;Host=localhost;Port=5432;";
 
-    [Trait("Type", "Integration Test")]
     [Fact(DisplayName = "Create a `DbContext` (with options) instance succeeds.")]
-    internal void CreateDbContextWithOptionsInstanceSucceeds()
+    internal void Create_DbContext_with_options_succeeds()
     {
         // ARRANGE.
         IFixture? fixture = new Fixture().Customize(new NodaTimeCustomization())
@@ -104,9 +103,8 @@ public sealed class PostgreSqlCustomizationTests
 {
     private const string connectionString = "User ID=postgres;Password=PostgreSQL;Host=localhost;Port=5432;";
 
-    [Trait("Type", "Integration Test")]
     [Fact(DisplayName = "Create a `DbContext` instance succeeds.")]
-    internal void CreateDbContextInstanceSucceeds()
+    internal void Create_DbContext_succeeds()
     {
         // ARRANGE.
         IFixture? fixture = new Fixture().Customize(new PostgreSqlCustomization(connectionString));
@@ -128,9 +126,8 @@ public sealed class PostgreSqlCustomizationTests
            .NotThrow();
     }
 
-    [Trait("Type", "Integration Test")]
     [Fact(DisplayName = "The created `DbContext` instance, uses the `PostgreSql` driver.")]
-    public void CreatedDbContextUsesPostgreSql()
+    internal void Created_DbContext_uses_the_postgresql_driver()
     {
         // ARRANGE.
         IFixture? fixture = new Fixture().Customize(new PostgreSqlCustomization(connectionString));
@@ -144,9 +141,8 @@ public sealed class PostgreSqlCustomizationTests
                .BeTrue();
     }
 
-    [Trait("Type", "Integration Test")]
-    [Fact(DisplayName = "The created `DbContext` instance, uses the configured `ConnectionString`.")]
-    public void CreatedDbContextUsesTheConfiguredConnectionString()
+    [Fact(DisplayName = "The created `DbContext` instance, uses the specified connection string.")]
+    internal void Created_DbContext_uses_the_specified_connection_string()
     {
         // ARRANGE.
         IFixture? fixture = new Fixture().Customize(new PostgreSqlCustomization(connectionString));

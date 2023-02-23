@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Title>Kwality.AutoFixture.Support.EF.PostgreSQL</Title>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <Authors>kdeconinck</Authors>
     <Description>PostgreSQL support for AutoFixture.</Description>
     <PackageProjectUrl>https://github.com/dotnet-essentials/Kwality.AutoFixture.Support.EF.PostgreSQL</PackageProjectUrl>
